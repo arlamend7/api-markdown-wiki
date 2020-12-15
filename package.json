@@ -1,0 +1,43 @@
+{
+  "name": "qr-cod",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node api/index.ts",
+    "knex:migrate": "knex --knexfile database/knexfile.ts migrate:latest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.9",
+    "@types/node": "^14.14.10",
+    "bcrypt": "^5.0.0",
+    "body-parse": "^0.1.0",
+    "colorette": "^1.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.12",
+    "marked": "^1.2.6",
+    "passport": "^0.4.1",
+    "passport-http-bearer": "^1.0.1",
+    "passport-local": "^1.0.0",
+    "qr-image": "^3.2.0",
+    "sqlite3": "^5.0.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/cors": "^2.8.9",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/marked": "^1.2.1",
+    "@types/passport": "^1.0.4",
+    "@types/passport-http-bearer": "^1.0.36",
+    "@types/passport-local": "^1.0.33",
+    "@types/qr-image": "^3.2.3"
+  }
+}

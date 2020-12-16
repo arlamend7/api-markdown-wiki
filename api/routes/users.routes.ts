@@ -13,11 +13,11 @@ routes.route(url)
     .get(UsersController.index)
     .post(UsersController.create);
 
-// routes.route(url + "/login")
-//     .post(passport.authenticate('local',{session:false}), (req , res) => {        
-//         res.set('NV-Token',criarwebToken(req.user))
-//         res.status(204).send();
-//     })
+routes.route(url + "/login")
+    .post(passport.authenticate('local',{session:false}), (req , res) => {        
+        res.set('NV-Token',criarwebToken(req.user))
+        res.status(204).send();
+    })
 
 
 export default routes;

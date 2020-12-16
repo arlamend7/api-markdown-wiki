@@ -8,29 +8,6 @@ let Usuario = {
     buscarPorEmail: (email: any) => ({ Senha : ""}),
     RecuperarPeloId: (ID: any) => ({})
 }
-pass.use(new Strategy({
-    usernameField: 'email',
-    passwordField: 'senha',
-    session: false
-},
-    async (email, senha, done) => {
-        console.log(email, senha);
-        try {
-            let usuario = Usuario.buscarPorEmail(email);
-            
-            if (!usuario) {
-                throw new Error("Usuario não existe");
-            }
-            if (senha) {
-                if (!await bcrypt.compare(senha, usuario.Senha)) {
-                    throw new Error("Senha Invalida");
-                }
-            }
-            done(null, usuario)
-        } catch (error) {
-            done(error)
-        }
-    }))
 
 pass.use(new Strategy({
         usernameField: 'email',

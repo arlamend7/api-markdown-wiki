@@ -1,6 +1,6 @@
 import express from 'express';
 import body from "body-parser"
-import { RoutesResolve } from './routes.handle';
+import routes from './routes/qrcode.routes'
 import cors from 'cors'
 
 const app = express();
@@ -13,9 +13,7 @@ app.use(
     )
     
 export let prefix = "/api/";
-RoutesResolve('/routes',(module) => {
-    app.use(module.default)
-});
+app.use(routes)
 var port = process.env.port || 3000
 app.listen(port, () => {
     console.log('api running')

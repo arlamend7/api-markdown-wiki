@@ -1,6 +1,5 @@
 import express from 'express';
 import fs from 'fs'
-import marked from 'marked';
 const routes = express.Router()
 
 routes.route('/wiki')
@@ -50,7 +49,7 @@ routes.route('/wiki/:name/html')
         if (fs.existsSync(`./markdown/${name}.md`)) {
             var text = fs.readFileSync(`./markdown/${name}.md`, { encoding: "utf-8" })
             res.writeHead(200, { 'Content-type': 'text/html' })
-                .write(marked(text));
+                .write("<h1>Hello World</h1>");
             res.end();
         }
         else {
